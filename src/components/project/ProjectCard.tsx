@@ -30,7 +30,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative"
+      className="group relative h-full"
       style={{ perspective: '1000px' }}
     >
       {/* Glow effect on hover */}

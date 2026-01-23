@@ -37,7 +37,7 @@ export function Hero() {
 
   // Content parallax
   const y = useTransform(scrollYProgress, [0, 1], [0, PARALLAX.content]);
-  const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
   // Decorative circles parallax (different speeds for depth effect)

@@ -12,7 +12,7 @@
     "greeting": "Hi, I'm",
     "name": "Alexander Morozov",
     "role": "Full-Stack Developer",
-    "description": "I build CRM systems, corporate websites, and payment solutions. I turn complex business processes into clean, working software."
+    "description": "I build CRM systems, corporate websites, web and mobile applications. I modernize legacy projects and provide long-term support. I turn complex business processes into clean, working software."
   },
   "stats": {
     "years": "years of experience",
@@ -23,7 +23,7 @@
     "title": "Services",
     "crm": {
       "title": "CRM Systems",
-      "description": "Custom CRM development, sales funnels, 1C integration and external services"
+      "description": "Booking systems, tracking and analytics. Interactive dashboards, third-party integrations"
     },
     "web": {
       "title": "Web Applications",
@@ -45,7 +45,7 @@
     "details": "Details",
     "back": "Back",
     "stack": "Tech Stack",
-    "tasks": "Solved Tasks"
+    "highlights": "Key Features"
   },
   "contact": {
     "title": "Get in Touch",
@@ -61,29 +61,35 @@
     "dark": "Dark"
   },
   "projectData": {
-    "crm1": {
-      "title": "CRM System",
-      "description": "Client relationship management with sales funnel, analytics, and 1C integration",
-      "features": ["Sales funnel", "Analytics", "1C integration", "Access control"],
-      "tasks": ["Sales funnel automation with customizable stages", "Real-time analytics dashboard", "Two-way synchronization with 1C", "Flexible role-based access control system"]
+    "cavextable": {
+      "title": "Cavextable",
+      "description": "Workplace booking system for manufacturing with interactive map and comprehensive employee evaluation",
+      "features": ["Workplace booking", "Interactive production map", "Employee ratings", "Attendance analytics", "Vacation management", "Admin panel with audit log"],
+      "highlights": ["Interactive SVG map with zoom and zone navigation", "Multi-factor ratings with role-based weight coefficients", "Three-month evaluation cycles with automatic notifications", "Sliding window attendance calculation for periods", "Employee rating and attendance dynamics charts"]
+    },
+    "manipeni": {
+      "title": "Manipeni CRM",
+      "description": "Comprehensive CRM system for furniture manufacturing with automatic salary calculation, warehouse management, logistics and analytics",
+      "features": ["Production management", "Automatic salary calculation", "Warehouse with QR-codes", "Orders and requests", "Logistics and shipping", "Accounting and reports", "10+ access roles", "Swagger API"],
+      "highlights": ["Legacy system modernization: Prisma ORM and express-zod-api for typed API", "SQL triggers for automatic salary calculation", "Task system with statuses and executor reassignment", "Chats: private and group conversations with attachments and archiving", "Web-push notifications via Service Worker and VAPID keys"]
     },
     "crm2": {
       "title": "Service CRM",
       "description": "Service request management system with scheduling and notifications",
       "features": ["Requests", "Scheduling", "Notifications", "History"],
-      "tasks": ["Request tracking from creation to completion", "Staff scheduling calendar", "Automated SMS and email notifications", "Complete customer service history"]
+      "highlights": ["Request tracking from creation to completion", "Staff scheduling calendar", "Automated SMS and email notifications", "Complete customer service history"]
     },
     "theater": {
-      "title": "State Theater",
-      "description": "Official theater website with repertoire, online booking, and event calendar",
-      "features": ["Booking", "Seat selection", "Calendar", "Artists"],
-      "tasks": ["Online ticket booking with payment", "Interactive seat selection map", "Dynamic event calendar", "Artist profiles and show histories"]
+      "title": "Theater Website",
+      "description": "Official website of the Udmurt Republic State National Theater with schedule, repertoire and ticket service integration",
+      "features": ["Show schedule and repertoire", "Online ticket sales", "Bilingual content (Russian/Udmurt)", "Accessibility mode", "CMS content management"],
+      "highlights": ["Complete legacy site redesign to modern stack", "QuickTickets integration for online ticket purchase", "Full data and media migration from old site", "Custom Strapi lifecycle hooks for slug auto-generation", "BVI plugin with lazy-loading for visually impaired visitors"]
     },
     "payment": {
       "title": "Payment System",
       "description": "Payment gateway interface with transaction monitoring",
       "features": ["Transactions", "Merchants", "API", "Fraud detection"],
-      "tasks": ["Real-time transaction monitoring", "Merchant dashboard with reports", "REST API with documentation", "Fraud detection system"]
+      "highlights": ["Real-time transaction monitoring", "Merchant dashboard with reports", "REST API with documentation", "Fraud detection system"]
     }
   }
 }

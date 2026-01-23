@@ -10,12 +10,14 @@ Personal portfolio website showcasing my work as a Full-Stack Developer. Built w
 - **Animations:** Framer Motion
 - **i18n:** next-intl (Russian/English)
 - **Theme:** next-themes (Dark/Light mode)
+- **Carousel:** Embla Carousel
+- **Lightbox:** yet-another-react-lightbox
 
 ## Features
 
 - Responsive design with mobile-first approach
 - Smooth scroll animations and parallax effects
-- Flip card project showcase with image carousel
+- Flip card project showcase with image carousel and lightbox
 - Dynamic OG image generation
 - SEO optimized (JSON-LD, sitemap, robots.txt)
 - Bilingual support (RU/EN) with auto-detection
@@ -24,7 +26,7 @@ Personal portfolio website showcasing my work as a Full-Stack Developer. Built w
 
 ### Prerequisites
 
-- Node.js 20+
+- Node.js 22+
 - npm or pnpm
 
 ### Installation
@@ -58,120 +60,54 @@ npm start
 ```
 src/
 ├── app/
-│   ├── [locale]/          # Locale-based routing
-│   │   ├── layout.tsx     # Main layout with SEO
-│   │   ├── page.tsx       # Home page
+│   ├── [locale]/              # Locale-based routing
+│   │   ├── layout.tsx         # Main layout with SEO
+│   │   ├── page.tsx           # Home page
 │   │   ├── opengraph-image.tsx
 │   │   └── twitter-image.tsx
+│   ├── globals.css
 │   ├── sitemap.ts
 │   └── robots.ts
 ├── components/
-│   ├── Hero.tsx           # Hero section with parallax
-│   ├── Services.tsx       # Services grid
-│   ├── ProjectsGrid.tsx   # Projects showcase
-│   ├── ProjectCard.tsx    # Flip card with carousel
-│   ├── Header.tsx         # Navigation header
+│   ├── project/               # Project card components
+│   │   ├── ProjectCard.tsx    # Flip card container
+│   │   ├── CardFront.tsx      # Front side with carousel
+│   │   ├── CardBack.tsx       # Back side with details
+│   │   └── ImageCarousel.tsx  # Embla carousel + lightbox
+│   ├── Hero.tsx               # Hero section with parallax
+│   ├── Services.tsx           # Services grid
+│   ├── ProjectsGrid.tsx       # Projects showcase
+│   ├── Header.tsx             # Navigation header
 │   ├── Footer.tsx
 │   └── ScrollToTop.tsx
 ├── data/
-│   └── projects.ts        # Projects data
+│   └── projects.ts            # Projects data
+├── lib/
+│   └── animations.ts          # Animation constants
 └── i18n/
     ├── routing.ts
     └── request.ts
 messages/
-├── en.json                # English translations
-└── ru.json                # Russian translations
+├── en.json                    # English translations
+└── ru.json                    # Russian translations
+public/
+└── images/                    # Project screenshots
 ```
 
----
-
-## VPS Deployment
-
-This section describes deployment to a VPS with nginx reverse proxy and automatic SSL.
-
-### Prerequisites on VPS
-
-- Docker and Docker Compose
-- nginx reverse proxy setup (see `~/nginx/`)
-- Certbot for SSL certificates
-
-### Deploy Steps
-
-#### 1. Upload code to server
+## Docker Deployment
 
 ```bash
-# From local machine
-rsync -avz --exclude node_modules --exclude .next \
-  ./ alex@alex-morozov.com:~/portfolio/
-```
-
-Or use git:
-
-```bash
-# On VPS
-cd ~
-git clone https://github.com/alex-morozov84/portfolio.git
-```
-
-#### 2. Build and run container
-
-```bash
-# On VPS
-cd ~/portfolio
+# Build and run
 docker compose up -d --build
-```
 
-#### 3. Add domain with SSL
-
-```bash
-cd ~/nginx
-./add-domain.sh alex-morozov.com portfolio:3000 portfolio:3000
-```
-
-> Note: Both backend and frontend point to the same Next.js service since it handles everything.
-
-#### 4. Verify deployment
-
-```bash
-# Check container status
-docker compose ps
-
-# Check logs
+# View logs
 docker compose logs -f
 
-# Test the site
-curl -I https://alex-morozov.com
-```
-
-### Update Deployment
-
-```bash
-# From local machine
-rsync -avz --exclude node_modules --exclude .next \
-  ./ alex@alex-morozov.com:~/portfolio/
-
-# On VPS
-cd ~/portfolio
-docker compose up -d --build
-```
-
-### Useful Commands
-
-```bash
-# Restart container
+# Restart
 docker compose restart
-
-# Stop container
-docker compose down
-
-# Rebuild without cache
-docker compose build --no-cache
-
-# View real-time logs
-docker compose logs -f
 ```
 
----
+The container exposes port 3000. Configure your reverse proxy (nginx, traefik, etc.) to route traffic to it.
 
 ## License
 
