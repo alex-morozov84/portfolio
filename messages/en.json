@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects"
+  },
+  "meta": {
+    "title": "Alexander Morozov — Full-Stack Developer",
+    "description": "Building CRM systems, web applications, and payment integrations"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Alexander Morozov",
+    "role": "Full-Stack Developer",
+    "description": "I build CRM systems, corporate websites, and payment solutions. I turn complex business processes into clean, working software."
+  },
+  "stats": {
+    "years": "years of experience",
+    "projects": "projects",
+    "clients": "clients"
+  },
+  "services": {
+    "title": "Services",
+    "crm": {
+      "title": "CRM Systems",
+      "description": "Custom CRM development, sales funnels, 1C integration and external services"
+    },
+    "web": {
+      "title": "Web Applications",
+      "description": "Corporate websites, dashboards, admin panels with React and Next.js"
+    },
+    "api": {
+      "title": "Backend & API",
+      "description": "REST API, payment system integrations, microservices with NestJS"
+    },
+    "support": {
+      "title": "Support",
+      "description": "Legacy project improvements, optimization, migration to modern stack"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewDemo": "Demo",
+    "viewLive": "Live",
+    "details": "Details",
+    "back": "Back",
+    "stack": "Tech Stack",
+    "tasks": "Solved Tasks"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "email": "Email",
+    "telegram": "Telegram"
+  },
+  "footer": {
+    "copyright": "Alexander Morozov",
+    "built": "Built with"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "projectData": {
+    "crm1": {
+      "title": "CRM System",
+      "description": "Client relationship management with sales funnel, analytics, and 1C integration",
+      "features": ["Sales funnel", "Analytics", "1C integration", "Access control"],
+      "tasks": ["Sales funnel automation with customizable stages", "Real-time analytics dashboard", "Two-way synchronization with 1C", "Flexible role-based access control system"]
+    },
+    "crm2": {
+      "title": "Service CRM",
+      "description": "Service request management system with scheduling and notifications",
+      "features": ["Requests", "Scheduling", "Notifications", "History"],
+      "tasks": ["Request tracking from creation to completion", "Staff scheduling calendar", "Automated SMS and email notifications", "Complete customer service history"]
+    },
+    "theater": {
+      "title": "State Theater",
+      "description": "Official theater website with repertoire, online booking, and event calendar",
+      "features": ["Booking", "Seat selection", "Calendar", "Artists"],
+      "tasks": ["Online ticket booking with payment", "Interactive seat selection map", "Dynamic event calendar", "Artist profiles and show histories"]
+    },
+    "payment": {
+      "title": "Payment System",
+      "description": "Payment gateway interface with transaction monitoring",
+      "features": ["Transactions", "Merchants", "API", "Fraud detection"],
+      "tasks": ["Real-time transaction monitoring", "Merchant dashboard with reports", "REST API with documentation", "Fraud detection system"]
+    }
+  }
+}
