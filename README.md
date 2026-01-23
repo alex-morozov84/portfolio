@@ -1,36 +1,178 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alexander Morozov — Portfolio
+
+Personal portfolio website showcasing my work as a Full-Stack Developer. Built with modern technologies and optimized for performance and SEO.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **Animations:** Framer Motion
+- **i18n:** next-intl (Russian/English)
+- **Theme:** next-themes (Dark/Light mode)
+
+## Features
+
+- Responsive design with mobile-first approach
+- Smooth scroll animations and parallax effects
+- Flip card project showcase with image carousel
+- Dynamic OG image generation
+- SEO optimized (JSON-LD, sitemap, robots.txt)
+- Bilingual support (RU/EN) with auto-detection
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 20+
+- npm or pnpm
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/alex-morozov84/portfolio.git
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Production build
+npm run build
 
-## Learn More
+# Start production server
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/
+│   ├── [locale]/          # Locale-based routing
+│   │   ├── layout.tsx     # Main layout with SEO
+│   │   ├── page.tsx       # Home page
+│   │   ├── opengraph-image.tsx
+│   │   └── twitter-image.tsx
+│   ├── sitemap.ts
+│   └── robots.ts
+├── components/
+│   ├── Hero.tsx           # Hero section with parallax
+│   ├── Services.tsx       # Services grid
+│   ├── ProjectsGrid.tsx   # Projects showcase
+│   ├── ProjectCard.tsx    # Flip card with carousel
+│   ├── Header.tsx         # Navigation header
+│   ├── Footer.tsx
+│   └── ScrollToTop.tsx
+├── data/
+│   └── projects.ts        # Projects data
+└── i18n/
+    ├── routing.ts
+    └── request.ts
+messages/
+├── en.json                # English translations
+└── ru.json                # Russian translations
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## VPS Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This section describes deployment to a VPS with nginx reverse proxy and automatic SSL.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Prerequisites on VPS
+
+- Docker and Docker Compose
+- nginx reverse proxy setup (see `~/nginx/`)
+- Certbot for SSL certificates
+
+### Deploy Steps
+
+#### 1. Upload code to server
+
+```bash
+# From local machine
+rsync -avz --exclude node_modules --exclude .next \
+  ./ alex@alex-morozov.com:~/portfolio/
+```
+
+Or use git:
+
+```bash
+# On VPS
+cd ~
+git clone https://github.com/alex-morozov84/portfolio.git
+```
+
+#### 2. Build and run container
+
+```bash
+# On VPS
+cd ~/portfolio
+docker compose up -d --build
+```
+
+#### 3. Add domain with SSL
+
+```bash
+cd ~/nginx
+./add-domain.sh alex-morozov.com portfolio:3000 portfolio:3000
+```
+
+> Note: Both backend and frontend point to the same Next.js service since it handles everything.
+
+#### 4. Verify deployment
+
+```bash
+# Check container status
+docker compose ps
+
+# Check logs
+docker compose logs -f
+
+# Test the site
+curl -I https://alex-morozov.com
+```
+
+### Update Deployment
+
+```bash
+# From local machine
+rsync -avz --exclude node_modules --exclude .next \
+  ./ alex@alex-morozov.com:~/portfolio/
+
+# On VPS
+cd ~/portfolio
+docker compose up -d --build
+```
+
+### Useful Commands
+
+```bash
+# Restart container
+docker compose restart
+
+# Stop container
+docker compose down
+
+# Rebuild without cache
+docker compose build --no-cache
+
+# View real-time logs
+docker compose logs -f
+```
+
+---
+
+## License
+
+MIT

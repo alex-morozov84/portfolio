@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { projects } from '@/data/projects';
-import { ProjectCard } from './ProjectCard';
+import { ProjectCard } from './project';
 import { motion } from 'framer-motion';
 
 export function ProjectsGrid() {

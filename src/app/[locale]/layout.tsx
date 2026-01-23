@@ -23,11 +23,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const messages = (await import(`../../../messages/${locale}.json`)).default;
 
@@ -69,8 +65,8 @@ export async function generateMetadata({
     alternates: {
       canonical: 'https://alex-morozov.com',
       languages: {
-        'en': 'https://alex-morozov.com/en',
-        'ru': 'https://alex-morozov.com/ru',
+        en: 'https://alex-morozov.com/en',
+        ru: 'https://alex-morozov.com/ru',
       },
     },
   };
@@ -95,10 +91,7 @@ function getJsonLd(locale: string) {
     description: isRussian
       ? 'Разработка CRM-систем, веб-приложений и платёжных интеграций'
       : 'Building CRM systems, web applications, and payment integrations',
-    sameAs: [
-      'https://github.com/alex-morozov84',
-      'https://t.me/NapishiMneNapishi',
-    ],
+    sameAs: ['https://github.com/alex-morozov84', 'https://t.me/NapishiMneNapishi'],
     email: ['mail@alex-morozov.com', 'mail@alex-morozov.ru'],
     knowsAbout: [
       'React',
@@ -140,7 +133,9 @@ export default async function LocaleLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="theme-color" content="#0a0a0a" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+      >
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             <div className="min-h-screen flex flex-col relative overflow-hidden">
