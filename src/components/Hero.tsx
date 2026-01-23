@@ -52,7 +52,7 @@ export function Hero() {
   ];
 
   return (
-    <section id="hero" ref={ref} className="py-12 md:py-20 relative min-h-[80vh]">
+    <section id="hero" ref={ref} className="py-12 md:py-20 relative">
       {/* Decorative background circles with parallax */}
       <motion.div
         style={{ y: circle1Y }}
