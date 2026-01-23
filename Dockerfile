@@ -1,6 +1,7 @@
 # Этап 1: Установка зависимостей
 FROM node:22-alpine AS deps
 RUN apk add --no-cache libc6-compat
+RUN npm install -g npm@11
 WORKDIR /app
 
 COPY package.json package-lock.json ./
