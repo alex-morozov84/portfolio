@@ -12,7 +12,7 @@
 ## Technical Improvements
 
 - [x] Image optimization with next/image for project screenshots
-- [ ] Analytics integration (Yandex.Metrika / Google Analytics)
+- [x] Analytics integration (Yandex.Metrika / Google Analytics)
 - [ ] Performance monitoring
 - [ ] E2E tests with Playwright
 - [x] manifest.json for PWA

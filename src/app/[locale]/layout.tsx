@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import { YandexMetrika } from '@/components/YandexMetrika';
 import { routing } from '@/i18n/routing';
 import '../globals.css';
 
@@ -215,6 +216,7 @@ export default async function LocaleLayout({
             </div>
           </NextIntlClientProvider>
         </ThemeProvider>
+        <YandexMetrika />
       </body>
     </html>
   );
