@@ -28,7 +28,7 @@ export const projects: Project[] = [
       { name: 'Zustand', color: 'from-amber-600 to-yellow-500' },
       { name: 'Docker', color: 'from-sky-600 to-sky-500' },
     ],
-    demoUrl: 'https://cavextable.alex-morozov.com',
+    demoUrl: 'https://cavextable.alex-morozov.com/demo/d8137f1fb202a6d5efd96e82d4e8d7b4',
     images: [
       '/images/cavextable/cavextable1.webp',
       '/images/cavextable/cavextable2.webp',
