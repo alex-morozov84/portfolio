@@ -25,30 +25,27 @@ export function LocaleSwitcher() {
       role="group"
       aria-label="Language switcher"
     >
-      {locales.map((l) => (
-        <motion.button
-          key={l}
-          whileHover={hoverScale}
-          whileTap={tapScale}
-          onClick={() => handleChange(l)}
-          disabled={isPending}
-          className={`cursor-pointer relative px-3 py-1.5 text-sm font-medium rounded-lg transition-all ${
-            locale === l ? 'text-white' : 'text-muted-foreground hover:text-foreground'
-          } ${isPending ? 'opacity-50 cursor-wait' : ''}`}
-          aria-label={l === 'en' ? 'English' : 'Русский'}
-          aria-current={locale === l ? 'true' : undefined}
-        >
-          {locale === l && (
-            <motion.div
-              layoutId="locale-indicator"
-              className="absolute inset-0 rounded-lg bg-gradient-to-r from-violet-600 to-purple-600"
-              transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
-              aria-hidden="true"
-            />
-          )}
-          <span className="relative z-10">{l.toUpperCase()}</span>
-        </motion.button>
-      ))}
+      {locales.map((l) => {
+        const isActive = locale === l;
+        return (
+          <motion.button
+            key={l}
+            whileHover={hoverScale}
+            whileTap={tapScale}
+            onClick={() => handleChange(l)}
+            disabled={isPending}
+            className={`cursor-pointer px-3 py-1.5 text-sm font-medium rounded-lg transition-all ${
+              isActive
+                ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'
+                : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+            } ${isPending ? 'opacity-50 cursor-wait' : ''}`}
+            aria-label={l === 'en' ? 'English' : 'Русский'}
+            aria-current={isActive ? 'true' : undefined}
+          >
+            {l.toUpperCase()}
+          </motion.button>
+        );
+      })}
     </div>
   );
 }

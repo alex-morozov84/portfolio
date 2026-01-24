@@ -59,8 +59,13 @@ html.dark {
   color-scheme: light dark;
 }
 
-/* Smooth scroll */
+/* Scroll offset for fixed header */
 html {
+  scroll-padding-top: 80px;
+}
+
+/* Smooth scroll - use data attribute for Next.js compatibility */
+html[data-scroll-behavior='smooth'] {
   scroll-behavior: smooth;
 }
 

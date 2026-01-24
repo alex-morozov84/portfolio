@@ -5,7 +5,7 @@ export interface Project {
     name: string;
     color: string;
   }>;
-  demoUrl: string;
+  demoUrl?: string;
   liveUrl?: string;
   images: string[];
   gradient: string;
@@ -86,7 +86,6 @@ export const projects: Project[] = [
       { name: 'Turborepo', color: 'from-rose-600 to-pink-500' },
       { name: 'AWS S3', color: 'from-orange-600 to-orange-500' },
     ],
-    demoUrl: 'https://mani-peni.alex-morozov.com',
     images: [
       '/images/mani-peni/mani-peni1.webp',
       '/images/mani-peni/mani-peni2.webp',
@@ -102,38 +101,6 @@ export const projects: Project[] = [
     featureStyle: 'bg-rose-500/20 text-foreground',
     titleStyle: 'from-rose-500 via-pink-400 to-fuchsia-500',
     accentColor: 'rose',
-  },
-  {
-    id: 'crm2',
-    translationKey: 'crm2',
-    stack: [
-      { name: 'React', color: 'from-cyan-500 to-cyan-400' },
-      { name: 'NestJS', color: 'from-red-600 to-red-500' },
-      { name: 'PostgreSQL', color: 'from-blue-700 to-blue-500' },
-      { name: 'Redis', color: 'from-red-700 to-red-500' },
-    ],
-    demoUrl: 'https://service.alex-morozov.com',
-    images: ['/images/crm2-1.png', '/images/crm2-2.png', '/images/crm2-3.png'],
-    gradient: 'from-blue-600/20 via-indigo-600/10 to-violet-600/20',
-    featureStyle: 'bg-blue-500/20 text-foreground',
-    titleStyle: 'from-blue-500 via-indigo-400 to-violet-500',
-    accentColor: 'blue',
-  },
-  {
-    id: 'payment',
-    translationKey: 'payment',
-    stack: [
-      { name: 'React', color: 'from-cyan-500 to-cyan-400' },
-      { name: 'NestJS', color: 'from-red-600 to-red-500' },
-      { name: 'PostgreSQL', color: 'from-blue-700 to-blue-500' },
-      { name: 'Redis', color: 'from-red-700 to-red-500' },
-    ],
-    demoUrl: 'https://pay.alex-morozov.com',
-    images: ['/images/pay-1.png', '/images/pay-2.png', '/images/pay-3.png'],
-    gradient: 'from-emerald-500/20 via-teal-500/10 to-cyan-500/20',
-    featureStyle: 'bg-emerald-500/20 text-foreground',
-    titleStyle: 'from-emerald-500 via-teal-400 to-cyan-500',
-    accentColor: 'emerald',
   },
 ];
 

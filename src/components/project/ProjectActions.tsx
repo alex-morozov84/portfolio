@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { ActionButton } from '@/components/ui/ActionButton';
 
 interface ProjectActionsProps {
-  demoUrl: string;
+  demoUrl?: string;
   liveUrl?: string;
   onDetailsClick?: () => void;
   onBackClick?: () => void;
@@ -24,9 +24,11 @@ export function ProjectActions({
 
   return (
     <div className="flex gap-2">
-      <ActionButton href={demoUrl} variant="primary" icon="demo" external className="flex-1">
-        {t('viewDemo')}
-      </ActionButton>
+      {demoUrl && (
+        <ActionButton href={demoUrl} variant="primary" icon="demo" external className="flex-1">
+          {t('viewDemo')}
+        </ActionButton>
+      )}
 
       {liveUrl && (
         <ActionButton href={liveUrl} variant="secondary" icon="live" external>

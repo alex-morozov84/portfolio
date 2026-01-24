@@ -2,6 +2,8 @@
 
 Personal portfolio website showcasing my work as a Full-Stack Developer. Built with modern technologies and optimized for performance and SEO.
 
+**Live:** [alex-morozov.com](https://alex-morozov.com)
+
 ## Tech Stack
 
 - **Framework:** Next.js 16 (App Router)
@@ -18,9 +20,20 @@ Personal portfolio website showcasing my work as a Full-Stack Developer. Built w
 - Responsive design with mobile-first approach
 - Smooth scroll animations and parallax effects
 - Flip card project showcase with image carousel and lightbox
+- Contact form with Telegram notifications
 - Dynamic OG image generation
-- SEO optimized (JSON-LD, sitemap, robots.txt)
+- SEO optimized with JSON-LD schemas (Person, FAQPage)
 - Bilingual support (RU/EN) with auto-detection
+- PWA-ready with manifest.json
+
+## Sections
+
+- **Hero** — Introduction with CTA and contact buttons
+- **Services** — What I offer
+- **Projects** — Featured work with flip cards
+- **Process** — How I work (4-step workflow)
+- **FAQ** — Frequently asked questions
+- **Contact** — Contact form with validation
 
 ## Getting Started
 
@@ -45,6 +58,15 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### Environment Variables
+
+For the contact form to work, create a `.env` file:
+
+```env
+TELEGRAM_BOT_TOKEN=your_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
+```
+
 ### Build
 
 ```bash
@@ -63,35 +85,38 @@ src/
 │   ├── [locale]/              # Locale-based routing
 │   │   ├── layout.tsx         # Main layout with SEO
 │   │   ├── page.tsx           # Home page
-│   │   ├── opengraph-image.tsx
-│   │   └── twitter-image.tsx
+│   │   └── opengraph-image.tsx
+│   ├── api/contact/           # Contact form API
+│   ├── not-found.tsx          # Custom 404 page
 │   ├── globals.css
-│   ├── sitemap.ts
-│   └── robots.ts
+│   └── sitemap.ts
 ├── components/
 │   ├── project/               # Project card components
-│   │   ├── ProjectCard.tsx    # Flip card container
-│   │   ├── CardFront.tsx      # Front side with carousel
-│   │   ├── CardBack.tsx       # Back side with details
-│   │   └── ImageCarousel.tsx  # Embla carousel + lightbox
-│   ├── Hero.tsx               # Hero section with parallax
-│   ├── Services.tsx           # Services grid
-│   ├── ProjectsGrid.tsx       # Projects showcase
-│   ├── Header.tsx             # Navigation header
-│   ├── Footer.tsx
-│   └── ScrollToTop.tsx
+│   │   ├── ProjectCard.tsx
+│   │   ├── CardFront.tsx
+│   │   ├── CardBack.tsx
+│   │   └── ImageCarousel.tsx
+│   ├── Hero.tsx
+│   ├── Services.tsx
+│   ├── Process.tsx
+│   ├── ProjectsGrid.tsx
+│   ├── FAQ.tsx
+│   ├── ContactForm.tsx
+│   ├── Header.tsx
+│   └── Footer.tsx
 ├── data/
 │   └── projects.ts            # Projects data
 ├── lib/
 │   └── animations.ts          # Animation constants
 └── i18n/
-    ├── routing.ts
-    └── request.ts
+    └── routing.ts
 messages/
 ├── en.json                    # English translations
 └── ru.json                    # Russian translations
 public/
-└── images/                    # Project screenshots
+├── images/                    # Project screenshots
+├── manifest.json              # PWA manifest
+└── robots.txt
 ```
 
 ## Docker Deployment

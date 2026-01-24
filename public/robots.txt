@@ -1,0 +1,6 @@
+# robots.txt for alex-morozov.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://alex-morozov.com/sitemap.xml

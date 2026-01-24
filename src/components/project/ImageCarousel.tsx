@@ -15,9 +15,10 @@ interface ImageCarouselProps {
   images: string[];
   gradient: string;
   isHovered: boolean;
+  projectTitle: string;
 }
 
-export function ImageCarousel({ images, gradient, isHovered }: ImageCarouselProps) {
+export function ImageCarousel({ images, gradient, isHovered, projectTitle }: ImageCarouselProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -27,19 +28,20 @@ export function ImageCarousel({ images, gradient, isHovered }: ImageCarouselProp
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
+  // Sync selected index with Embla carousel
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-    return () => {
-      emblaApi.off('select', onSelect);
+
+    const handleSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
     };
-  }, [emblaApi, onSelect]);
+
+    handleSelect();
+    emblaApi.on('select', handleSelect);
+    return () => {
+      emblaApi.off('select', handleSelect);
+    };
+  }, [emblaApi]);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -65,7 +67,7 @@ export function ImageCarousel({ images, gradient, isHovered }: ImageCarouselProp
               >
                 <Image
                   src={image}
-                  alt={`Screenshot ${index + 1}`}
+                  alt={`${projectTitle} — скриншот ${index + 1}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"

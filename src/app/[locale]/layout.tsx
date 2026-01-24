@@ -81,7 +81,8 @@ const themeScript = `
 
 function getJsonLd(locale: string) {
   const isRussian = locale === 'ru';
-  return {
+
+  const person = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Alexander Morozov',
@@ -104,6 +105,67 @@ function getJsonLd(locale: string) {
       'Web Development',
     ],
   };
+
+  const faqItems = isRussian
+    ? [
+        {
+          question: 'Какие технологии вы используете?',
+          answer:
+            'Основной стек: React/Next.js для фронтенда, NestJS/Express для бэкенда, PostgreSQL для базы данных. Также работаю с TypeScript, Redis, Docker, AWS.',
+        },
+        {
+          question: 'Сколько времени занимает разработка?',
+          answer:
+            'Лендинг или небольшой сайт — от 1-2 недель. CRM-система средней сложности — 2-3 месяца. Сроки зависят от объёма функционала.',
+        },
+        {
+          question: 'Как формируется стоимость?',
+          answer:
+            'Оцениваю проект после изучения требований. Работаю по фиксированной цене за проект или по часовой ставке для долгосрочного сотрудничества.',
+        },
+        {
+          question: 'Есть ли поддержка после запуска?',
+          answer:
+            'Да, предоставляю гарантийную поддержку 1-3 месяца после запуска. Исправление багов бесплатно.',
+        },
+      ]
+    : [
+        {
+          question: 'What technologies do you use?',
+          answer:
+            'Main stack: React/Next.js for frontend, NestJS/Express for backend, PostgreSQL for database. Also work with TypeScript, Redis, Docker, AWS.',
+        },
+        {
+          question: 'How long does development take?',
+          answer:
+            'Landing page or small website — 1-2 weeks. Medium complexity CRM system — 2-3 months. Timeline depends on functionality scope.',
+        },
+        {
+          question: 'How is pricing determined?',
+          answer:
+            'I estimate after reviewing requirements. Work on fixed price per project or hourly rate for long-term collaboration.',
+        },
+        {
+          question: 'Is there support after launch?',
+          answer:
+            'Yes, I provide 1-3 months warranty support after launch. Bug fixes are free.',
+        },
+      ];
+
+  const faq = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
+  return [person, faq];
 }
 
 export default async function LocaleLayout({
@@ -123,7 +185,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script
@@ -131,7 +193,8 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd(locale)) }}
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="theme-color" content="#0a0a0a" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#8b5cf6" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}

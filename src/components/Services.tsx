@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { Users, Monitor, Code, RefreshCw } from 'lucide-react';
-import { DURATION, DELAY, EASE } from '@/lib/animations';
+import { DURATION, DELAY } from '@/lib/animations';
 
 const services = [
   {

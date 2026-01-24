@@ -1,18 +1,14 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
 import { DURATION, hoverScale, tapScale } from '@/lib/animations';
+import { useMounted } from '@/lib/hooks';
 
 export function ThemeSwitcher() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useMounted();
 
   if (!mounted) {
     return <div className="w-10 h-10 rounded-xl bg-muted/50 animate-pulse" aria-hidden="true" />;

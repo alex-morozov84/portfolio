@@ -27,7 +27,7 @@ export function CardFront({ project, isHovered, onFlip }: CardFrontProps) {
     >
       {/* Image with title overlay */}
       <div className="relative">
-        <ImageCarousel images={project.images} gradient={project.gradient} isHovered={isHovered} />
+        <ImageCarousel images={project.images} gradient={project.gradient} isHovered={isHovered} projectTitle={title} />
 
         {/* Title overlay - glass strip at top left */}
         <div className="absolute left-3 top-3 z-30 pointer-events-none">

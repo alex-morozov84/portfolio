@@ -1,0 +1,11 @@
+{
+  "name": "Александр Морозов — Full-Stack разработчик",
+  "short_name": "Alex Morozov",
+  "description": "Разработка CRM-систем, веб-приложений и платёжных интеграций",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait-primary",
+  "icons": []
+}

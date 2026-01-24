@@ -12,7 +12,6 @@ import {
   EASE,
   PARALLAX,
   staggerContainer,
-  fadeInUp,
   hoverScale,
   tapScale,
 } from '@/lib/animations';
@@ -118,6 +117,21 @@ export function Hero() {
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* CTA Button */}
+        <motion.div variants={itemVariants} className="mb-8">
+          <motion.button
+            onClick={() => {
+              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="cursor-pointer inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-semibold text-lg shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 transition-shadow"
+          >
+            <Send className="w-5 h-5" aria-hidden="true" />
+            {t('cta')}
+          </motion.button>
         </motion.div>
 
         {/* Contact buttons */}
