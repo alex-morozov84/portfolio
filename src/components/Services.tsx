@@ -56,8 +56,7 @@ export function Services() {
                 duration: DURATION.normal,
                 delay: index * DELAY.stagger,
               }}
-              whileHover={{ y: -5 }}
-              className="group relative p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-violet-500/30 transition-all"
+              className="group relative p-6 rounded-2xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-violet-500/30 hover:-translate-y-1 transition-[border-color,transform] duration-300"
             >
               {/* Gradient glow on hover */}
               <div

@@ -3,10 +3,13 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { useTheme } from 'next-themes';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 import { ThemeSwitcher } from './ThemeSwitcher';
 import { LocaleSwitcher } from './LocaleSwitcher';
 import { DURATION, EASE, SCROLL, hoverScale, tapScale } from '@/lib/animations';
+import { useMounted } from '@/lib/hooks';
 
 const navItems = [
   { key: 'about', href: '#hero' },
@@ -19,6 +22,8 @@ const navItems = [
 export function Header() {
   const t = useTranslations('nav');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const mounted = useMounted();
   const { scrollY } = useScroll();
   const headerOpacity = useTransform(
     scrollY,
@@ -30,6 +35,9 @@ export function Header() {
     [SCROLL.headerOpacityStart, SCROLL.headerOpacityEnd],
     [0, 1]
   );
+
+  const isDark = mounted && resolvedTheme === 'dark';
+  const logoSrc = isDark ? '/logo-light.png' : '/logo-dark.png';
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -73,10 +81,27 @@ export function Header() {
           href="/"
           whileHover={hoverScale}
           whileTap={tapScale}
-          className="cursor-pointer text-2xl font-bold bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent"
+          className="cursor-pointer flex items-center relative h-8"
           aria-label="Home"
         >
-          AM
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={logoSrc}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: DURATION.fast }}
+            >
+              <Image
+                src={logoSrc}
+                alt="Logo"
+                width={40}
+                height={40}
+                className="h-8 w-auto"
+                priority
+              />
+            </motion.div>
+          </AnimatePresence>
         </motion.a>
 
         {/* Desktop Navigation */}
