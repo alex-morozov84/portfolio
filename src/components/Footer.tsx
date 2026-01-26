@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Mail } from 'lucide-react';
 import { SiGithub, SiTelegram } from '@icons-pack/react-simple-icons';
 import { contacts } from '@/data/projects';
@@ -9,6 +9,7 @@ import { hoverScale, tapScale } from '@/lib/animations';
 
 export function Footer() {
   const t = useTranslations('footer');
+  const locale = useLocale() as 'en' | 'ru';
   const currentYear = new Date().getFullYear();
 
   return (
@@ -33,7 +34,7 @@ export function Footer() {
           {/* Social links */}
           <nav className="flex items-center gap-4" aria-label="Social links">
             <motion.a
-              href={`mailto:${contacts.emails[0]}`}
+              href={`mailto:${contacts.email[locale]}`}
               whileHover={hoverScale}
               whileTap={tapScale}
               className="cursor-pointer p-2.5 rounded-xl bg-muted/50 border border-border/50 hover:border-violet-500/50 hover:text-violet-500 transition-all"

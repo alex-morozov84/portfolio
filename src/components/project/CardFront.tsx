@@ -19,6 +19,8 @@ export function CardFront({ project, isHovered, onFlip }: CardFrontProps) {
   const title = t(`${project.translationKey}.title`);
   const description = t(`${project.translationKey}.description`);
   const features = t.raw(`${project.translationKey}.features`) as string[];
+  const hasImageAlts = t.has(`${project.translationKey}.imageAlts`);
+  const imageAlts = hasImageAlts ? (t.raw(`${project.translationKey}.imageAlts`) as string[]) : undefined;
 
   return (
     <div
@@ -27,7 +29,7 @@ export function CardFront({ project, isHovered, onFlip }: CardFrontProps) {
     >
       {/* Image with title overlay */}
       <div className="relative">
-        <ImageCarousel images={project.images} gradient={project.gradient} isHovered={isHovered} projectTitle={title} />
+        <ImageCarousel images={project.images} gradient={project.gradient} isHovered={isHovered} projectTitle={title} imageAlts={imageAlts} />
 
         {/* Title overlay - glass strip at top left */}
         <div className="absolute left-3 top-3 z-30 pointer-events-none">

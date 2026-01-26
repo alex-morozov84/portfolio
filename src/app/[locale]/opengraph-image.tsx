@@ -1,14 +1,28 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
-export const alt = 'Alexander Morozov — Full-Stack Developer';
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = 'image/png';
 
-export default async function Image() {
+export function generateImageMetadata({ params }: { params: { locale: string } }) {
+  const isRussian = params.locale === 'ru';
+  return [
+    {
+      id: 'og',
+      alt: isRussian
+        ? 'Александр Морозов — Full-Stack разработчик'
+        : 'Alexander Morozov — Full-Stack Developer',
+    },
+  ];
+}
+
+export default async function Image({ params }: { params: { locale: string } }) {
+  const isRussian = params.locale === 'ru';
+  const name = isRussian ? 'Александр Морозов' : 'Alexander Morozov';
+  const role = isRussian ? 'Full-Stack разработчик' : 'Full-Stack Developer';
+
   return new ImageResponse(
     <div
       style={{
@@ -66,7 +80,7 @@ export default async function Image() {
             fontFamily: 'system-ui, sans-serif',
           }}
         >
-          Alexander Morozov
+          {name}
         </h1>
         <p
           style={{
@@ -79,7 +93,7 @@ export default async function Image() {
             fontFamily: 'system-ui, sans-serif',
           }}
         >
-          Full-Stack Developer
+          {role}
         </p>
 
         {/* Tech stack */}

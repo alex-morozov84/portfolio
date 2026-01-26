@@ -91,17 +91,21 @@ function getJsonLd(locale: string) {
     url: 'https://alex-morozov.com',
     jobTitle: isRussian ? 'Full-Stack разработчик' : 'Full-Stack Developer',
     description: isRussian
-      ? 'Разработка CRM-систем, веб-приложений и платёжных интеграций'
-      : 'Building CRM systems, web applications, and payment integrations',
+      ? 'Разработка CRM-систем, корпоративных сайтов и веб-приложений на заказ. React, Next.js, Node.js.'
+      : 'Custom CRM systems, corporate websites, and web applications. React, Next.js, Node.js.',
     sameAs: ['https://github.com/alex-morozov84', 'https://t.me/NapishiMneNapishi'],
-    email: ['mail@alex-morozov.com', 'mail@alex-morozov.ru'],
+    email: isRussian ? 'mail@alex-morozov.ru' : 'mail@alex-morozov.com',
     knowsAbout: [
       'React',
       'Next.js',
       'TypeScript',
+      'Node.js',
       'NestJS',
+      'Express',
       'PostgreSQL',
       'Redis',
+      'Docker',
+      'Strapi',
       'CRM Development',
       'Web Development',
     ],
@@ -112,44 +116,54 @@ function getJsonLd(locale: string) {
         {
           question: 'Какие технологии вы используете?',
           answer:
-            'Основной стек: React/Next.js для фронтенда, NestJS/Express для бэкенда, PostgreSQL для базы данных. Также работаю с TypeScript, Redis, Docker, AWS.',
+            'Фронтенд: React и Next.js. Бэкенд: Node.js с NestJS или Express, для контентных сайтов — Strapi CMS. База данных: PostgreSQL, кеширование через Redis, полнотекстовый поиск. Интеграции: Telegram-боты, SMS-рассылки, платёжные системы, AI-сервисы. Контейнеризация Docker, CI/CD. Весь код на TypeScript.',
         },
         {
           question: 'Сколько времени занимает разработка?',
           answer:
-            'Лендинг или небольшой сайт — от 1-2 недель. CRM-система средней сложности — 2-3 месяца. Сроки зависят от объёма функционала.',
+            'Лендинг или небольшой сайт — от 1-2 недель. CRM-система средней сложности — 2-3 месяца. Сроки зависят от объёма функционала и оперативности согласований.',
         },
         {
           question: 'Как формируется стоимость?',
           answer:
-            'Оцениваю проект после изучения требований. Работаю по фиксированной цене за проект или по часовой ставке для долгосрочного сотрудничества.',
+            'Оцениваю проект после изучения требований. Работаю по фиксированной цене за проект или по часовой ставке для долгосрочного сотрудничества. Предоплата 30-50%, остаток после сдачи.',
         },
         {
           question: 'Есть ли поддержка после запуска?',
           answer:
-            'Да, предоставляю гарантийную поддержку 1-3 месяца после запуска. Исправление багов бесплатно.',
+            'Да, предоставляю гарантийную поддержку 1-3 месяца после запуска. Исправление багов бесплатно. Также предлагаю долгосрочную поддержку: доработки, обновления, мониторинг.',
+        },
+        {
+          question: 'Как происходит коммуникация?',
+          answer:
+            'Общаемся в Telegram или по email. Еженедельные созвоны для демонстрации прогресса. Для каждого проекта разворачиваю тестовую версию на отдельном домене.',
         },
       ]
     : [
         {
           question: 'What technologies do you use?',
           answer:
-            'Main stack: React/Next.js for frontend, NestJS/Express for backend, PostgreSQL for database. Also work with TypeScript, Redis, Docker, AWS.',
+            'Frontend: React and Next.js. Backend: Node.js with NestJS or Express, Strapi CMS for content sites. Database: PostgreSQL, Redis caching, full-text search. Integrations: Telegram bots, SMS, payment systems, AI services. Docker containerization, CI/CD. All code in TypeScript.',
         },
         {
           question: 'How long does development take?',
           answer:
-            'Landing page or small website — 1-2 weeks. Medium complexity CRM system — 2-3 months. Timeline depends on functionality scope.',
+            'Landing page or small website — 1-2 weeks. Medium complexity CRM system — 2-3 months. Timeline depends on functionality scope and approval speed.',
         },
         {
           question: 'How is pricing determined?',
           answer:
-            'I estimate after reviewing requirements. Work on fixed price per project or hourly rate for long-term collaboration.',
+            'I estimate after reviewing requirements. Work on fixed price per project or hourly rate for long-term collaboration. 30-50% upfront, remainder upon completion.',
         },
         {
           question: 'Is there support after launch?',
           answer:
-            'Yes, I provide 1-3 months warranty support after launch. Bug fixes are free.',
+            'Yes, I provide 1-3 months warranty support after launch. Bug fixes are free. Also offer long-term support: improvements, updates, monitoring.',
+        },
+        {
+          question: 'How does communication work?',
+          answer:
+            'We communicate via Telegram or email. Weekly calls for progress demos. For each project I deploy a test version on a separate domain.',
         },
       ];
 

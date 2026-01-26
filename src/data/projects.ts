@@ -84,7 +84,8 @@ export const projects: Project[] = [
       { name: 'Zustand', color: 'from-amber-600 to-yellow-500' },
       { name: 'Zod', color: 'from-blue-500 to-indigo-500' },
       { name: 'Turborepo', color: 'from-rose-600 to-pink-500' },
-      { name: 'AWS S3', color: 'from-orange-600 to-orange-500' },
+      { name: 'Yandex Cloud', color: 'from-yellow-500 to-red-500' },
+      { name: 'Web Push', color: 'from-violet-600 to-purple-500' },
     ],
     images: [
       '/images/mani-peni/mani-peni1.webp',
@@ -105,7 +106,10 @@ export const projects: Project[] = [
 ];
 
 export const contacts = {
-  emails: ['mail@alex-morozov.com', 'mail@alex-morozov.ru'],
+  email: {
+    en: 'mail@alex-morozov.com',
+    ru: 'mail@alex-morozov.ru',
+  },
   telegram: 'https://t.me/NapishiMneNapishi',
   github: 'https://github.com/alex-morozov84',
 };

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Mail, Send } from 'lucide-react';
 import { SiGithub, SiTelegram } from '@icons-pack/react-simple-icons';
 import { contacts } from '@/data/projects';
@@ -28,6 +28,7 @@ const itemVariants = {
 export function Hero() {
   const t = useTranslations('hero');
   const tStats = useTranslations('stats');
+  const locale = useLocale() as 'en' | 'ru';
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -136,18 +137,15 @@ export function Hero() {
 
         {/* Contact buttons */}
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row flex-wrap gap-3">
-          {contacts.emails.map((email) => (
-            <motion.a
-              key={email}
-              href={`mailto:${email}`}
-              whileHover={hoverScale}
-              whileTap={tapScale}
-              className="cursor-pointer inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/10 transition-all"
-            >
-              <Mail className="w-5 h-5 text-violet-500" aria-hidden="true" />
-              <span className="text-sm font-medium">{email}</span>
-            </motion.a>
-          ))}
+          <motion.a
+            href={`mailto:${contacts.email[locale]}`}
+            whileHover={hoverScale}
+            whileTap={tapScale}
+            className="cursor-pointer inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-card/80 backdrop-blur-sm border border-border/50 hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/10 transition-all"
+          >
+            <Mail className="w-5 h-5 text-violet-500" aria-hidden="true" />
+            <span className="text-sm font-medium">{contacts.email[locale]}</span>
+          </motion.a>
 
           <motion.a
             href={contacts.telegram}

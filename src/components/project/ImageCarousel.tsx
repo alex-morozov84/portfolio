@@ -16,9 +16,10 @@ interface ImageCarouselProps {
   gradient: string;
   isHovered: boolean;
   projectTitle: string;
+  imageAlts?: string[];
 }
 
-export function ImageCarousel({ images, gradient, isHovered, projectTitle }: ImageCarouselProps) {
+export function ImageCarousel({ images, gradient, isHovered, projectTitle, imageAlts }: ImageCarouselProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -67,7 +68,7 @@ export function ImageCarousel({ images, gradient, isHovered, projectTitle }: Ima
               >
                 <Image
                   src={image}
-                  alt={`${projectTitle} — скриншот ${index + 1}`}
+                  alt={imageAlts?.[index] || `${projectTitle} — скриншот ${index + 1}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"

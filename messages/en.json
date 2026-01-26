@@ -8,13 +8,13 @@
   },
   "meta": {
     "title": "Alexander Morozov — Full-Stack Developer",
-    "description": "Building CRM systems, web applications, and payment integrations"
+    "description": "Custom CRM systems, corporate websites, and web applications. React, Next.js, Node.js. 5+ years of experience, 20+ projects. Direct collaboration, transparent terms, demos at every stage."
   },
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Alexander Morozov",
     "role": "Full-Stack Developer",
-    "description": "I build CRM systems, corporate websites, web and mobile applications. I modernize legacy projects and provide long-term support. I turn complex business processes into clean, working software.",
+    "description": "I build CRM systems, corporate websites, and web applications. I modernize legacy projects and provide long-term support. Direct collaboration, transparent terms, demos at every stage.",
     "cta": "Discuss Project"
   },
   "stats": {
@@ -26,19 +26,19 @@
     "title": "Services",
     "crm": {
       "title": "CRM Systems",
-      "description": "Booking systems, tracking and analytics. Interactive dashboards, third-party integrations"
+      "description": "Business management web apps: customer, order, and task tracking. Interactive dashboards, analytics, integrations"
     },
     "web": {
       "title": "Web Applications",
-      "description": "Corporate websites, dashboards, admin panels with React and Next.js"
+      "description": "Corporate websites, client portals, admin panels, e-commerce, landing pages"
     },
     "api": {
-      "title": "Backend & API",
-      "description": "REST API, payment system integrations, microservices with NestJS"
+      "title": "Backend & Integrations",
+      "description": "Server-side logic, payment system and third-party integrations, site search, hosting setup"
     },
     "support": {
       "title": "Support",
-      "description": "Legacy project improvements, optimization, migration to modern stack"
+      "description": "Long-term maintenance, feature development, optimization, fast resolution of critical issues"
     }
   },
   "projects": {
@@ -48,7 +48,7 @@
     "details": "Details",
     "back": "Back",
     "stack": "Tech Stack",
-    "highlights": "Key Features"
+    "highlights": "Key Highlights"
   },
   "contact": {
     "title": "Get in Touch",
@@ -93,7 +93,7 @@
     "title": "FAQ",
     "technologies": {
       "question": "What technologies do you use?",
-      "answer": "Main stack: React/Next.js for frontend, NestJS/Express for backend, PostgreSQL for database. Also work with TypeScript, Redis, Docker, AWS. Technology choice depends on the task — I always select the optimal solution."
+      "answer": "Frontend: React and Next.js. Backend: Node.js with NestJS or Express, Strapi CMS for content sites. Database: PostgreSQL, Redis caching, full-text search. Cloud storage for files. Integrations: Telegram bots, SMS, payment systems, AI services. Docker containerization, CI/CD. All code in TypeScript. I choose the stack based on the task."
     },
     "timeline": {
       "question": "How long does development take?",
@@ -109,7 +109,7 @@
     },
     "communication": {
       "question": "How does communication work?",
-      "answer": "We communicate via Telegram or email. Weekly calls for progress demos. Access to repository and task tracker. I respond during business hours within a few hours."
+      "answer": "We communicate via Telegram or email. Weekly calls for progress demos. For each project I deploy a test version on a separate domain — you can view and test anytime. Access to repository. I respond during business hours within a few hours."
     }
   },
   "footer": {
@@ -123,33 +123,24 @@
   "projectData": {
     "cavextable": {
       "title": "Cavex CRM",
-      "description": "Workplace booking system for manufacturing with interactive map and comprehensive employee evaluation",
-      "features": ["Workplace booking", "Interactive production map", "Employee ratings", "Attendance analytics", "Vacation management", "Admin panel with audit log"],
-      "highlights": ["Interactive SVG map with zoom and zone navigation", "Multi-factor ratings with role-based weight coefficients", "Three-month evaluation cycles with automatic notifications", "Sliding window attendance calculation for periods", "Employee rating and attendance dynamics charts"]
+      "description": "Workplace management system for manufacturing with interactive floor plans, employee evaluation, and attendance analytics",
+      "features": ["Interactive floor plans", "Workplace booking", "Peer evaluation system", "Attendance tracking", "Rating charts", "Vacation management", "Auto-assignment", "Admin panel with logs"],
+      "highlights": ["Interactive SVG floor plans with availability view and booking", "10-point peer evaluation system split into personal and professional qualities", "Evaluation weights depend on the reviewer's role", "Composite employee rating from three components with dynamics charts", "Calendar view for administrators with attendance marks", "Automatic seat assignment for those who forgot to book", "Re-evaluation reminders on a 3-month cycle", "Vacation management system", "Redis caching, action logging with admin panel viewer", "Multi-role access system, JWT authorization"],
+      "imageAlts": ["Cavex CRM — interactive production map", "Cavex CRM — employee evaluation system", "Cavex CRM — schedule and workplace booking", "Cavex CRM — vacation system", "Cavex CRM — booking system", "Cavex CRM — attendance sheet", "Cavex CRM — attendance analytics", "Cavex CRM — employee ratings"]
     },
     "manipeni": {
       "title": "Manipeni CRM",
-      "description": "Comprehensive CRM system for furniture manufacturing with automatic salary calculation, warehouse management, logistics and analytics",
-      "features": ["Production management", "Automatic salary calculation", "Warehouse with QR-codes", "Orders and requests", "Logistics and shipping", "Accounting and reports", "10+ access roles", "Swagger API"],
-      "highlights": ["Legacy system modernization: Prisma ORM and express-zod-api for typed API", "SQL triggers for automatic salary calculation", "Task system with statuses and executor reassignment", "Chats: private and group conversations with attachments and archiving", "Web-push notifications via Service Worker and VAPID keys"]
-    },
-    "crm2": {
-      "title": "Service CRM",
-      "description": "Service request management system with scheduling and notifications",
-      "features": ["Requests", "Scheduling", "Notifications", "History"],
-      "highlights": ["Request tracking from creation to completion", "Staff scheduling calendar", "Automated SMS and email notifications", "Complete customer service history"]
+      "description": "Comprehensive CRM for furniture manufacturing: from product creation to marketplace sales with salary calculation and analytics",
+      "features": ["Production tracking", "Salary calculation", "Product catalog", "Orders & shipping", "Marketplaces", "Inventory", "Chats & tasks", "Analytics"],
+      "highlights": ["Full product cycle: blank → step-by-step operations → media → catalog → sale → shipping", "Manufacturing history for each item with all operation marks", "Salary calculation by rates based on product, shape, size, area", "Defect penalty system, real-time employee earnings table", "Marketplace and shipping company integrations", "SMS notifications to customers on shipping status", "Sales commission for managers", "Full inventory management", "Chats, group conversations, built-in task manager", "Web-push notifications", "Knowledge base and video tutorials for the system", "Media and document storage in Yandex Cloud", "Revenue and expense analytics, receipt storage", "Full mobile version, dark and light themes", "Flexible role-based access system"],
+      "imageAlts": ["Manipeni CRM — admin panel main screen", "Manipeni CRM — admin panel menu", "Manipeni CRM — production stages interface", "Manipeni CRM — product catalog", "Manipeni CRM — product shipping section", "Manipeni CRM — stock heatmap", "Manipeni CRM — inventory section", "Manipeni CRM — payment analytics", "Manipeni CRM — task manager interface"]
     },
     "theater": {
       "title": "Theater Website",
-      "description": "Official website of the Udmurt Republic State National Theater with schedule, repertoire and ticket service integration",
-      "features": ["Show schedule and repertoire", "Online ticket sales", "Bilingual content (Russian/Udmurt)", "Accessibility mode", "CMS content management"],
-      "highlights": ["Complete legacy site redesign to modern stack", "QuickTickets integration for online ticket purchase", "Full data and media migration from old site", "Custom Strapi lifecycle hooks for slug auto-generation", "BVI plugin with lazy-loading for visually impaired visitors"]
-    },
-    "payment": {
-      "title": "Payment System",
-      "description": "Payment gateway interface with transaction monitoring",
-      "features": ["Transactions", "Merchants", "API", "Fraud detection"],
-      "highlights": ["Real-time transaction monitoring", "Merchant dashboard with reports", "REST API with documentation", "Fraud detection system"]
+      "description": "Complete redesign of the Udmurt State National Theater website with content preservation, new design and ticket service integration",
+      "features": ["Multi-page content website", "Online ticket sales", "Bilingual", "Accessibility mode", "CMS management", "Responsive design"],
+      "highlights": ["Complete legacy site redesign with full content preservation", "Strapi CMS with custom hooks and endpoints for admin optimization", "Convenient multilingual workflow (Russian/Udmurt)", "Accessibility mode compliant with state standards", "QuickTickets ticket service integration", "Data migration from legacy MySQL database", "Media migration from old cloud storage", "Image optimization", "Responsive design for desktop and mobile"],
+      "imageAlts": ["Theater website — home page", "Theater website — schedule page", "Theater website — repertoire page", "Theater website — show page", "Theater website — admin panel"]
     }
   }
 }
