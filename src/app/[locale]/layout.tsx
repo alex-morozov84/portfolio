@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       },
     },
     alternates: {
-      canonical: 'https://alex-morozov.com',
+      canonical: `https://alex-morozov.com/${locale}`,
       languages: {
         en: 'https://alex-morozov.com/en',
         ru: 'https://alex-morozov.com/ru',
