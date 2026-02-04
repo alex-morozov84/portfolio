@@ -8,13 +8,13 @@
   },
   "meta": {
     "title": "Alexander Morozov — Full-Stack Developer",
-    "description": "Custom CRM systems, corporate websites, and web applications. React, Next.js, Node.js. 5+ years of experience, 20+ projects. Direct collaboration, transparent terms, demos at every stage."
+    "description": "Custom CRM systems, corporate websites, and web applications. From architecture design to production deployment. React, Next.js, Node.js, integrations with 1C, marketplaces, payment systems. Direct collaboration, transparent terms, demos at every stage."
   },
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Alexander Morozov",
     "role": "Full-Stack Developer",
-    "description": "I build CRM systems, corporate websites, and web applications. I modernize legacy projects and provide long-term support. Direct collaboration, transparent terms, demos at every stage.",
+    "description": "I build comprehensive CRM systems, corporate websites, and web applications from scratch. Modernize legacy projects with data migration and redesign. Integrations with 1C, marketplaces, payment systems. Long-term production support. Direct collaboration, transparent terms, demos at every stage.",
     "cta": "Discuss Project"
   },
   "stats": {
@@ -123,24 +123,39 @@
   "projectData": {
     "cavextable": {
       "title": "Cavex CRM",
-      "description": "Workplace management system for manufacturing with interactive floor plans, employee evaluation, and attendance analytics",
+      "description": "Comprehensive manufacturing management system with interactive floor maps, weighted peer evaluation system, and automated attendance tracking. Full development cycle from architecture to production launch.",
       "features": ["Interactive floor plans", "Workplace booking", "Peer evaluation system", "Attendance tracking", "Rating charts", "Vacation management", "Auto-assignment", "Admin panel with logs"],
       "highlights": ["Interactive SVG floor plans with availability view and booking", "10-point peer evaluation system split into personal and professional qualities", "Evaluation weights depend on the reviewer's role", "Composite employee rating from three components with dynamics charts", "Calendar view for administrators with attendance marks", "Automatic seat assignment for those who forgot to book", "Re-evaluation reminders on a 3-month cycle", "Vacation management system", "Redis caching, action logging with admin panel viewer", "Multi-role access system, JWT authorization"],
       "imageAlts": ["Cavex CRM — interactive production map", "Cavex CRM — employee evaluation system", "Cavex CRM — schedule and workplace booking", "Cavex CRM — vacation system", "Cavex CRM — booking system", "Cavex CRM — attendance sheet", "Cavex CRM — attendance analytics", "Cavex CRM — employee ratings"]
     },
     "manipeni": {
       "title": "Manipeni CRM",
-      "description": "Comprehensive CRM for furniture manufacturing: from product creation to marketplace sales with salary calculation and analytics",
+      "description": "Full-cycle manufacturing CRM: from raw material to marketplace sales. Automatic salary calculation with complex tariffs, shipping company integrations, SMS notifications, built-in task manager and chats. Yandex Cloud storage.",
       "features": ["Production tracking", "Salary calculation", "Product catalog", "Orders & shipping", "Marketplaces", "Inventory", "Chats & tasks", "Analytics"],
       "highlights": ["Full product cycle: blank → step-by-step operations → media → catalog → sale → shipping", "Manufacturing history for each item with all operation marks", "Salary calculation by rates based on product, shape, size, area", "Defect penalty system, real-time employee earnings table", "Marketplace and shipping company integrations", "SMS notifications to customers on shipping status", "Sales commission for managers", "Full inventory management", "Chats, group conversations, built-in task manager", "Web-push notifications", "Knowledge base and video tutorials for the system", "Media and document storage in Yandex Cloud", "Revenue and expense analytics, receipt storage", "Full mobile version, dark and light themes", "Flexible role-based access system"],
       "imageAlts": ["Manipeni CRM — admin panel main screen", "Manipeni CRM — admin panel menu", "Manipeni CRM — production stages interface", "Manipeni CRM — product catalog", "Manipeni CRM — product shipping section", "Manipeni CRM — stock heatmap", "Manipeni CRM — inventory section", "Manipeni CRM — payment analytics", "Manipeni CRM — task manager interface"]
     },
     "theater": {
-      "title": "Theater Website",
-      "description": "Complete redesign of the Udmurt State National Theater website with content preservation, new design and ticket service integration",
+      "title": "Udmurt State Theater Website",
+      "description": "Complete redesign and modernization of a government institution's legacy website. Full content migration from MySQL, media transfer from old cloud storage, QuickTickets integration. Custom CMS with optimized admin panel. Bilingual support and accessibility mode compliant with state standards.",
       "features": ["Multi-page content website", "Online ticket sales", "Bilingual", "Accessibility mode", "CMS management", "Responsive design"],
       "highlights": ["Complete legacy site redesign with full content preservation", "Strapi CMS with custom hooks and endpoints for admin optimization", "Convenient multilingual workflow (Russian/Udmurt)", "Accessibility mode compliant with state standards", "QuickTickets ticket service integration", "Data migration from legacy MySQL database", "Media migration from old cloud storage", "Image optimization", "Responsive design for desktop and mobile"],
       "imageAlts": ["Theater website — home page", "Theater website — schedule page", "Theater website — repertoire page", "Theater website — show page", "Theater website — admin panel"]
+    },
+    "aksprom": {
+      "title": "Aksprom B2B",
+      "description": "B2B platform for partners with full-text search (Manticore Search), personal pricing from 1C, and OAuth authentication. S3 media storage, PDF/Excel export, PWA. Partner accounts with order history. Feature-Sliced Design architecture.",
+      "features": ["Full-text search with fuzzy matching and suggestions", "Catalog with search", "Partners and personal prices", "Orders and shipments", "Delivery", "Admin panel", "Personal account", "OAuth", "PWA"],
+      "highlights": ["Full-text search over catalog with fuzzy matching, suggestions and partial-word search (Manticore Search)", "Partners synced with 1C, personal prices by product groups", "Catalog: brands, categories, features, stock",
+      "Media storage in S3-compatible object storage (MinIO)", "Order placement, shipment statuses, delivery with addresses", "Admin: products, partners, orders, users, brands, units, logs, SEO, files", "Partner account with order history and counterparty filter", "OAuth: Google, Yandex, GitHub, Mail.ru; JWT authorization", "PDF and Excel export, PWA, React Email for transactional mail", "Client: Next.js, Redux Toolkit, Ant Design, Feature-Sliced Design; server: NestJS, TypeORM, Redis"],
+      "imageAlts": ["Aksprom — home, catalog", "Aksprom — product page", "Aksprom — cart and order", "Aksprom — account, orders", "Aksprom — admin panel"]
+    },
+    "sellerpay": {
+      "title": "Sellerpay",
+      "description": "Fintech platform for international money transfers with AI invoice recognition, digital signature registration, and payment system integration. SMS authentication, agent system with promo codes. Production-grade tools: Amplitude analytics, Graylog logging.",
+      "features": ["SMS authentication", "Digital signature registration", "SWIFT, Alipay, WeChat", "AI invoice recognition", "Form auto-fill", "Agent system", "Promo codes", "PDF generation"],
+      "highlights": ["SMS-based authentication with Yandex Captcha protection", "User registration via electronic digital signature (EDS)", "International transfer requests: SWIFT, Alipay, WeChat Pay", "AI-powered invoice recognition of any format using Yandex AI (OCR)", "Automatic form filling from recognized invoices", "Multi-level agent system with promo codes and referral chain tracking", "PDF document generation for requests and reports", "Admin panel for managing requests, users, and agents", "Transactional email via Resend", "Product analytics with Amplitude for user behavior tracking", "Centralized logging with Graylog for system monitoring", "Metrics integration: Yandex.Metrica, Mail.ru, VK", "Multi-currency support and international payment systems", "Production-ready architecture with monitoring and analytics"],
+      "imageAlts": ["Sellerpay — home page", "Sellerpay — transfer request creation", "Sellerpay — AI invoice recognition", "Sellerpay — auto-filled transfer form", "Sellerpay — agent system and promo codes", "Sellerpay — admin panel"]
     }
   }
 }
