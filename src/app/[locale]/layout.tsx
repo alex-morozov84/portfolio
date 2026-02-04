@@ -183,6 +183,75 @@ function getJsonLd(locale: string) {
   return [person, faq];
 }
 
+function getServicesJsonLd(locale: string) {
+  const isRussian = locale === 'ru';
+
+  const services = isRussian
+    ? [
+        {
+          serviceType: 'Разработка CRM-систем',
+          description:
+            'Веб-приложения для управления бизнесом: учёт клиентов, заказов, задач. Интерактивные дашборды, аналитика, интеграции',
+        },
+        {
+          serviceType: 'Разработка веб-приложений',
+          description:
+            'Корпоративные сайты, личные кабинеты, админ-панели, интернет-магазины, лендинги',
+        },
+        {
+          serviceType: 'Серверная разработка и интеграции',
+          description:
+            'Бэкенд-логика, интеграции с платёжными системами и внешними сервисами, поиск по сайту, настройка хостинга',
+        },
+        {
+          serviceType: 'Поддержка и сопровождение',
+          description:
+            'Долгосрочное сопровождение, доработка функционала, оптимизация, быстрое решение критических проблем',
+        },
+      ]
+    : [
+        {
+          serviceType: 'CRM Systems Development',
+          description:
+            'Business management web applications: customer, order, and task tracking. Interactive dashboards, analytics, integrations',
+        },
+        {
+          serviceType: 'Web Application Development',
+          description: 'Corporate websites, client portals, admin panels, e-commerce platforms, landing pages',
+        },
+        {
+          serviceType: 'Backend Development & Integrations',
+          description:
+            'Server-side logic, payment system and third-party service integrations, site search implementation, hosting configuration',
+        },
+        {
+          serviceType: 'Maintenance & Support',
+          description:
+            'Long-term maintenance, feature development, performance optimization, fast resolution of critical issues',
+        },
+      ];
+
+  return services.map((service) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: service.serviceType,
+    description: service.description,
+    provider: {
+      '@type': 'Person',
+      name: 'Alexander Morozov',
+      url: 'https://alex-morozov.com',
+    },
+    areaServed: {
+      '@type': 'Place',
+      name: isRussian ? 'Международно' : 'Worldwide',
+    },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: 'https://alex-morozov.com',
+    },
+  }));
+}
+
 export default async function LocaleLayout({
   children,
   params,
@@ -206,6 +275,10 @@ export default async function LocaleLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd(locale)) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getServicesJsonLd(locale)) }}
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

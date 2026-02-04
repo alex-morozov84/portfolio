@@ -23,7 +23,7 @@
 ## Content
 
 - [x] Real project screenshots instead of placeholders
-- [ ] Custom favicon and app icons (icon-192.png, icon-512.png) + update manifest.json
+- [x] Custom favicon and app icons (icon-192.png, icon-512.png) + update manifest.json
 - [ ] Logo design
 - [x] More detailed project descriptions
 - [x] FAQ section with JSON-LD schema
@@ -35,4 +35,4 @@
 - [x] sitemap.xml
 - [x] OpenGraph images
 - [x] JSON-LD structured data (Person, FAQPage)
-- [ ] Service schema for each service
+- [x] Service schema for each service
