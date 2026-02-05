@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title: messages.meta.title,
       description: messages.meta.description,
-      url: 'https://alex-morozov.com',
+      url: `https://alex-morozov.com/${locale}`,
       siteName: 'Alexander Morozov Portfolio',
       locale: locale === 'ru' ? 'ru_RU' : 'en_US',
       type: 'website',
@@ -68,6 +68,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       languages: {
         en: 'https://alex-morozov.com/en',
         ru: 'https://alex-morozov.com/ru',
+        'x-default': 'https://alex-morozov.com/ru',
       },
     },
   };
